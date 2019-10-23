@@ -1,16 +1,15 @@
 "use strict";
 
-import { Model } from "mongoose";
+import Operation from '../models/calculator.model';
 
-const OperationModel = Model("Operation");
 
 const listOperations = async (req, res) => {
-  const operations = await OperationModel.find({});
+  const operations = await Operation.find({});
   res.json(operations);
 };
 
 const createOperation = async (req, res) => {
-  const newOperation = new OperationModel(req.body);
+  const newOperation = new Operation(req.body);
 
   const savedOperation = await newOperation.save();
   return savedOperation;

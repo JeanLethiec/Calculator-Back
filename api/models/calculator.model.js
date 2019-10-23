@@ -1,6 +1,6 @@
 "use strict";
 
-import { Schema, Model } from "mongoose";
+import { Schema, model } from "mongoose";
 
 const OperationSchema = new Schema({
   value: {
@@ -29,4 +29,4 @@ const OperationSchema = new Schema({
   }
 });
 
-export default Model("Operation", OperationSchema);
+export default model("Operation", OperationSchema);
