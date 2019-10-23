@@ -1,9 +1,10 @@
 "use strict";
-module.exports = function(app) {
-  var controller = require("../controllers/calculator.controller");
 
-  app
+import { listOperations, createOperation } from '../controllers/calculator.controller';
+
+export default (application) => {
+  application
     .route("/operation")
-    .get(controller.list_operations)
-    .post(controller.create_operation);
+    .get(listOperations)
+    .post(createOperation)
 };

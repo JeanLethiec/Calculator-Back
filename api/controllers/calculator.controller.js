@@ -1,19 +1,19 @@
 "use strict";
 
-var mongoose = require("mongoose"),
-  Operation = mongoose.model("Operation");
+import { Model } from "mongoose";
 
-exports.list_operations = function(req, res) {
-  Operation.find({}, function(err, operation) {
-    if (err) res.send(err);
-    res.json(operation);
-  });
+const OperationModel = Model("Operation");
+
+const listOperations = async (req, res) => {
+  const operations = await OperationModel.find({});
+  res.json(operations);
 };
 
-exports.create_operation = function(req, res) {
-  var new_operation = new Operation(req.body);
-  new_operation.save(function(err, operation) {
-    if (err) res.send(err);
-    res.json(operation);
-  });
+const createOperation = async (req, res) => {
+  const newOperation = new OperationModel(req.body);
+
+  const savedOperation = await newOperation.save();
+  return savedOperation;
 };
+
+export { listOperations, createOperation };
