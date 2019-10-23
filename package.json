@@ -1,0 +1,27 @@
+{
+  "name": "calculator-back",
+  "version": "1.0.0",
+  "description": "Back-end in NodeJS for Calculator app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeanLethiec/Calculator-Back-NodeJS.git"
+  },
+  "author": "Jean Lethiec",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JeanLethiec/Calculator-Back-NodeJS/issues"
+  },
+  "homepage": "https://github.com/JeanLethiec/Calculator-Back-NodeJS#readme",
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.7.5"
+  }
+}
