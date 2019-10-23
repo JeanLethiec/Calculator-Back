@@ -9,7 +9,7 @@ const OperationSchema = new Schema({
       {
         validator: function (v) {
           v = v.replace(/\s+/g, "");
-          if (!isNormalInteger(v.split("=")[1])) {
+          if (!Number.isInteger(v.split("=")[1])) {
             // If it's not an integer, we don't bother checking if it's odd.
             return true;
           }

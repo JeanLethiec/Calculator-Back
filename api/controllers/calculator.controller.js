@@ -12,7 +12,7 @@ const createOperation = async (req, res) => {
   const newOperation = new Operation(req.body);
 
   const savedOperation = await newOperation.save();
-  return savedOperation;
+  res.json(savedOperation);
 };
 
 export { listOperations, createOperation };
